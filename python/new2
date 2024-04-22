@@ -1,0 +1,40 @@
+# cook your dish here
+t = int(input())
+istr = input()
+
+lent = istr.split()
+n = int(lent[0])
+m = int(lent[1])
+
+s = input()
+k = input()
+
+min_num = 9999
+track = [0 for i in range(t)]
+
+for p in range(t):
+
+    i = 0
+    j = 0
+    inner_i = i
+    inner_j = j
+    for char in s[inner_i:]:
+          # Create a new variable to track the position in s
+        sum_result = 0
+        for cha in k[inner_j:]:
+            a = int(char) - int(cha)
+            sum_result += abs(a)
+            print(sum_result)
+            inner_i += 1
+            inner_j += 1
+        
+        inner_i -= 1
+        inner_j -= 2
+    
+        if sum_result < min_num:
+            min_num = sum_result
+    
+    track[p] = min_num
+    
+for p in range(t):
+    print(track[p])

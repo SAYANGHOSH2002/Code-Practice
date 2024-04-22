@@ -1,0 +1,7 @@
+inputstr = input()
+inputnum = inputstr.split()
+#b = int(input())
+
+inputnum[0] = int(inputnum[0]) + int(inputnum[1])
+inputnum[0] = (int(inputnum[0])*10) + 1
+print(inputnum[0])
